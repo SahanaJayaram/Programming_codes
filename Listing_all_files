@@ -1,0 +1,17 @@
+import os
+
+def get_filepaths(directory):
+    
+    file_paths = [] 
+   
+    for root, directories, files in os.walk(directory):
+        for filename in files:
+        
+            filepath = os.path.join(root, filename)
+            file_paths.append(filepath)  
+
+    return file_paths  
+full_file_paths = get_filepaths(os.getcwd())
+for i in  range (len(full_file_paths)):
+    print full_file_paths[i].strip('\n')
+   
